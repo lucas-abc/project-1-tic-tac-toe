@@ -38,7 +38,7 @@ function clickedBox(element){
         element.setAttribute("id", playerIcon);
         players.classList.add("active");
     }
-    checkWinenr();
+    checkWinner();
     element.style.pointerEvents = "none";
     playBoard.style.pointerEvents = "none";
     let randomTimeDelay = ((Math.random() * 1000) + 200).toFixed();
@@ -70,7 +70,7 @@ function bot() {
                 players.classList.remove("active");
                 allGrid[randomBox].setAttribute("id", playerIcon);
             }
-            checkWinenr();
+            checkWinner();
         }
         allGrid[randomBox].style.pointerEvents = "none";
         playBoard.style.pointerEvents = "auto";
@@ -92,7 +92,7 @@ const resultBox = document.querySelector(".result-box")
 const wonText = resultBox.querySelector(".winner")
 
 
-function checkWinenr() {
+function checkWinner() {
     if (checkIcon(1,2,3,playerIcon) || checkIcon(4,5,6, playerIcon) || checkIcon(7,8,9, playerIcon) || checkIcon(1,4,7, playerIcon) || checkIcon(2,5,8, playerIcon) || checkIcon(3,6,9, playerIcon) || checkIcon(1,5,9, playerIcon) || checkIcon(3,5,7, playerIcon)) {
         runBot = false;
         bot(runBot);
